@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class AnalyticsRow extends StatelessWidget {
   const AnalyticsRow({
     Key? key,
-    required this.hareket,
+    required this.move,
+    required this.secondsPassed,
   }) : super(key: key);
 
-  final int hareket;
+  final int move;
+  final int secondsPassed;
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +20,10 @@ class AnalyticsRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
-            "Yapılan Hamle: $hareket",
-            style: TextStyle(fontSize: 24),
+            "Yapılan Hamle: $move",
           ),
           Text(
-            "Geçen zaman: ",
-            style: TextStyle(fontSize: 24),
+            "Geçen zaman: ${secondsPassed}",
           ),
         ],
       ),
