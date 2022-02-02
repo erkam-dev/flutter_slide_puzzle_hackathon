@@ -5,9 +5,11 @@ class PuzzleGrid extends StatelessWidget {
   const PuzzleGrid({
     Key? key,
     required this.sayilar,
+    required this.click,
   }) : super(key: key);
 
   final List<int> sayilar;
+  final Function click;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,9 @@ class PuzzleGrid extends StatelessWidget {
                     //Her bir puzzle elemanı
                     sayilar: sayilar,
                     index: index,
-                    clickItem: () {}, //tıklayınca ne olacak (şuan boş)
+                    clickItem: () {
+                      click(index);
+                    }, //tıklayınca ne olacak
                   ),
           ),
         ),
